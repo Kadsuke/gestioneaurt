@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="localite">
+      <h2 data-cy="localiteDetailsHeading"><span jhiTranslate="passerelleApp.gestioneauLocalite.detail.title">Localite</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ localite.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauLocalite.libelle">Libelle</span></dt>
+        <dd>
+          <span>{{ localite.libelle }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauLocalite.commune">Commune</span></dt>
+        <dd>
+          <div *ngIf="localite.commune">
+            <a [routerLink]="['/commune', localite.commune?.id, 'view']">{{ localite.commune?.libelle }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/localite', localite.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

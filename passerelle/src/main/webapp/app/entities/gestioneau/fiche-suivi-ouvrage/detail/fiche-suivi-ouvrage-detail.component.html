@@ -1,0 +1,180 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ficheSuiviOuvrage">
+      <h2 data-cy="ficheSuiviOuvrageDetailsHeading">
+        <span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.detail.title">Fiche Suivi Ouvrage</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.prjAppuis">Prj Appuis</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.prjAppuis }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.nomBenef">Nom Benef</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.nomBenef }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.prenomBenef">Prenom Benef</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.prenomBenef }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.professionBenef">Profession Benef</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.professionBenef }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.nbUsagers">Nb Usagers</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.nbUsagers }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.contacts">Contacts</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.contacts }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.longitude">Longitude</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.longitude }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.latitude">Latitude</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.latitude }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.dateRemiseDevis">Date Remise Devis</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.dateRemiseDevis | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.dateDebutTravaux">Date Debut Travaux</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.dateDebutTravaux | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.dateFinTravaux">Date Fin Travaux</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.dateFinTravaux | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.rue">Rue</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.rue }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.porte">Porte</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.porte }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.coutMenage">Cout Menage</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.coutMenage }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.subvOnea">Subv Onea</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.subvOnea }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.subvProjet">Subv Projet</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.subvProjet }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.autreSubv">Autre Subv</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.autreSubv }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.toles">Toles</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.toles }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.animateur">Animateur</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.animateur }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.superviseur">Superviseur</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.superviseur }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.controleur">Controleur</span></dt>
+        <dd>
+          <span>{{ ficheSuiviOuvrage.controleur }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.parcelle">Parcelle</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.parcelle">
+            <a [routerLink]="['/parcelle', ficheSuiviOuvrage.parcelle?.id, 'view']">{{ ficheSuiviOuvrage.parcelle?.libelle }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.prevision">Prevision</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.prevision">
+            <a [routerLink]="['/prevision', ficheSuiviOuvrage.prevision?.id, 'view']">{{ ficheSuiviOuvrage.prevision?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.natureouvrage">Natureouvrage</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.natureouvrage">
+            <a [routerLink]="['/nature-ouvrage', ficheSuiviOuvrage.natureouvrage?.id, 'view']">{{
+              ficheSuiviOuvrage.natureouvrage?.libelle
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.typehabitation">Typehabitation</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.typehabitation">
+            <a [routerLink]="['/type-habitation', ficheSuiviOuvrage.typehabitation?.id, 'view']">{{
+              ficheSuiviOuvrage.typehabitation?.libelle
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.sourceapprovep">Sourceapprovep</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.sourceapprovep">
+            <a [routerLink]="['/source-approv-ep', ficheSuiviOuvrage.sourceapprovep?.id, 'view']">{{
+              ficheSuiviOuvrage.sourceapprovep?.libelle
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.modeevacuationeauusee">Modeevacuationeauusee</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.modeevacuationeauusee">
+            <a [routerLink]="['/mode-evacuation-eau-usee', ficheSuiviOuvrage.modeevacuationeauusee?.id, 'view']">{{
+              ficheSuiviOuvrage.modeevacuationeauusee?.libelle
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.modeevacexcreta">Modeevacexcreta</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.modeevacexcreta">
+            <a [routerLink]="['/mode-evac-excreta', ficheSuiviOuvrage.modeevacexcreta?.id, 'view']">{{
+              ficheSuiviOuvrage.modeevacexcreta?.libelle
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.macon">Macon</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.macon">
+            <a [routerLink]="['/macon', ficheSuiviOuvrage.macon?.id, 'view']">{{ ficheSuiviOuvrage.macon?.libelle }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.prefabricant">Prefabricant</span></dt>
+        <dd>
+          <div *ngIf="ficheSuiviOuvrage.prefabricant">
+            <a [routerLink]="['/prefabricant', ficheSuiviOuvrage.prefabricant?.id, 'view']">{{
+              ficheSuiviOuvrage.prefabricant?.libelle
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/fiche-suivi-ouvrage', ficheSuiviOuvrage.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

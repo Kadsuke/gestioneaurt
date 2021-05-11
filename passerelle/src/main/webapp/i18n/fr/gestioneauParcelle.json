@@ -1,0 +1,30 @@
+{
+  "passerelleApp": {
+    "gestioneauParcelle": {
+      "home": {
+        "title": "Parcelles",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Parcelle",
+        "createOrEditLabel": "Créer ou éditer un Parcelle",
+        "search": "Recherche pour Parcelle",
+        "notFound": "Aucun Parcelle trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Parcelle {{ id }} ?"
+      },
+      "detail": {
+        "title": "Parcelle"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "lot": "Lot"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauParcelle": {
+      "created": "Un nouveau Parcelle a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Parcelle avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Parcelle avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

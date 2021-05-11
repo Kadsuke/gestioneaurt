@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="directionRegionale">
+      <h2 data-cy="directionRegionaleDetailsHeading">
+        <span jhiTranslate="passerelleApp.gestioneauDirectionRegionale.detail.title">Direction Regionale</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ directionRegionale.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauDirectionRegionale.libelle">Libelle</span></dt>
+        <dd>
+          <span>{{ directionRegionale.libelle }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauDirectionRegionale.responsable">Responsable</span></dt>
+        <dd>
+          <span>{{ directionRegionale.responsable }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauDirectionRegionale.contact">Contact</span></dt>
+        <dd>
+          <span>{{ directionRegionale.contact }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/direction-regionale', directionRegionale.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

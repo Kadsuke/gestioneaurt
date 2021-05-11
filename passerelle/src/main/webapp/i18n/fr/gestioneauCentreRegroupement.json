@@ -1,0 +1,32 @@
+{
+  "passerelleApp": {
+    "gestioneauCentreRegroupement": {
+      "home": {
+        "title": "CentreRegroupements",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Centre Regroupement",
+        "createOrEditLabel": "Créer ou éditer un Centre Regroupement",
+        "search": "Recherche pour Centre Regroupement",
+        "notFound": "Aucun Centre Regroupement trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Centre Regroupement {{ id }} ?"
+      },
+      "detail": {
+        "title": "Centre Regroupement"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "responsable": "Responsable",
+      "contact": "Contact",
+      "directionregionale": "Directionregionale"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauCentreRegroupement": {
+      "created": "Un nouveau Centre Regroupement a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Centre Regroupement avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Centre Regroupement avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

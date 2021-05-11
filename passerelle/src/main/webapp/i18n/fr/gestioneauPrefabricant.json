@@ -1,0 +1,29 @@
+{
+  "passerelleApp": {
+    "gestioneauPrefabricant": {
+      "home": {
+        "title": "Prefabricants",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Prefabricant",
+        "createOrEditLabel": "Créer ou éditer un Prefabricant",
+        "search": "Recherche pour Prefabricant",
+        "notFound": "Aucun Prefabricant trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Prefabricant {{ id }} ?"
+      },
+      "detail": {
+        "title": "Prefabricant"
+      },
+      "id": "ID",
+      "libelle": "Libelle"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauPrefabricant": {
+      "created": "Un nouveau Prefabricant a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Prefabricant avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Prefabricant avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

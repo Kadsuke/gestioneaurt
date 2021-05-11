@@ -1,0 +1,29 @@
+{
+  "passerelleApp": {
+    "gestioneauTypeCommune": {
+      "home": {
+        "title": "TypeCommunes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Type Commune",
+        "createOrEditLabel": "Créer ou éditer un Type Commune",
+        "search": "Recherche pour Type Commune",
+        "notFound": "Aucun Type Commune trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Type Commune {{ id }} ?"
+      },
+      "detail": {
+        "title": "Type Commune"
+      },
+      "id": "ID",
+      "libelle": "Libelle"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauTypeCommune": {
+      "created": "Un nouveau Type Commune a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Type Commune avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Type Commune avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

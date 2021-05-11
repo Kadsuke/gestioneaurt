@@ -1,0 +1,30 @@
+{
+  "passerelleApp": {
+    "gestioneauLocalite": {
+      "home": {
+        "title": "Localites",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Localite",
+        "createOrEditLabel": "Créer ou éditer un Localite",
+        "search": "Recherche pour Localite",
+        "notFound": "Aucun Localite trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Localite {{ id }} ?"
+      },
+      "detail": {
+        "title": "Localite"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "commune": "Commune"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauLocalite": {
+      "created": "Un nouveau Localite a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Localite avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Localite avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

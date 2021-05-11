@@ -1,0 +1,712 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-fiche-suivi-ouvrage-heading"
+        data-cy="FicheSuiviOuvrageCreateUpdateHeading"
+        jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.home.createOrEditLabel"
+      >
+        Create or edit a Fiche Suivi Ouvrage
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.prjAppuis" for="field_prjAppuis"
+            >Prj Appuis</label
+          >
+          <input type="text" class="form-control" name="prjAppuis" id="field_prjAppuis" data-cy="prjAppuis" formControlName="prjAppuis" />
+          <div *ngIf="editForm.get('prjAppuis')!.invalid && (editForm.get('prjAppuis')!.dirty || editForm.get('prjAppuis')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('prjAppuis')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.nomBenef" for="field_nomBenef"
+            >Nom Benef</label
+          >
+          <input type="text" class="form-control" name="nomBenef" id="field_nomBenef" data-cy="nomBenef" formControlName="nomBenef" />
+          <div *ngIf="editForm.get('nomBenef')!.invalid && (editForm.get('nomBenef')!.dirty || editForm.get('nomBenef')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nomBenef')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.prenomBenef" for="field_prenomBenef"
+            >Prenom Benef</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="prenomBenef"
+            id="field_prenomBenef"
+            data-cy="prenomBenef"
+            formControlName="prenomBenef"
+          />
+          <div *ngIf="editForm.get('prenomBenef')!.invalid && (editForm.get('prenomBenef')!.dirty || editForm.get('prenomBenef')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('prenomBenef')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.professionBenef"
+            for="field_professionBenef"
+            >Profession Benef</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="professionBenef"
+            id="field_professionBenef"
+            data-cy="professionBenef"
+            formControlName="professionBenef"
+          />
+          <div
+            *ngIf="
+              editForm.get('professionBenef')!.invalid &&
+              (editForm.get('professionBenef')!.dirty || editForm.get('professionBenef')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('professionBenef')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.nbUsagers" for="field_nbUsagers"
+            >Nb Usagers</label
+          >
+          <input type="number" class="form-control" name="nbUsagers" id="field_nbUsagers" data-cy="nbUsagers" formControlName="nbUsagers" />
+          <div *ngIf="editForm.get('nbUsagers')!.invalid && (editForm.get('nbUsagers')!.dirty || editForm.get('nbUsagers')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nbUsagers')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('nbUsagers')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.contacts" for="field_contacts"
+            >Contacts</label
+          >
+          <input type="text" class="form-control" name="contacts" id="field_contacts" data-cy="contacts" formControlName="contacts" />
+          <div *ngIf="editForm.get('contacts')!.invalid && (editForm.get('contacts')!.dirty || editForm.get('contacts')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('contacts')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.longitude" for="field_longitude"
+            >Longitude</label
+          >
+          <input type="number" class="form-control" name="longitude" id="field_longitude" data-cy="longitude" formControlName="longitude" />
+          <div *ngIf="editForm.get('longitude')!.invalid && (editForm.get('longitude')!.dirty || editForm.get('longitude')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('longitude')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('longitude')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.latitude" for="field_latitude"
+            >Latitude</label
+          >
+          <input type="number" class="form-control" name="latitude" id="field_latitude" data-cy="latitude" formControlName="latitude" />
+          <div *ngIf="editForm.get('latitude')!.invalid && (editForm.get('latitude')!.dirty || editForm.get('latitude')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('latitude')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('latitude')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.dateRemiseDevis"
+            for="field_dateRemiseDevis"
+            >Date Remise Devis</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_dateRemiseDevis"
+              data-cy="dateRemiseDevis"
+              type="datetime-local"
+              class="form-control"
+              name="dateRemiseDevis"
+              formControlName="dateRemiseDevis"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div
+            *ngIf="
+              editForm.get('dateRemiseDevis')!.invalid &&
+              (editForm.get('dateRemiseDevis')!.dirty || editForm.get('dateRemiseDevis')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('dateRemiseDevis')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('dateRemiseDevis')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.dateDebutTravaux"
+            for="field_dateDebutTravaux"
+            >Date Debut Travaux</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_dateDebutTravaux"
+              data-cy="dateDebutTravaux"
+              type="datetime-local"
+              class="form-control"
+              name="dateDebutTravaux"
+              formControlName="dateDebutTravaux"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div
+            *ngIf="
+              editForm.get('dateDebutTravaux')!.invalid &&
+              (editForm.get('dateDebutTravaux')!.dirty || editForm.get('dateDebutTravaux')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('dateDebutTravaux')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('dateDebutTravaux')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.dateFinTravaux"
+            for="field_dateFinTravaux"
+            >Date Fin Travaux</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_dateFinTravaux"
+              data-cy="dateFinTravaux"
+              type="datetime-local"
+              class="form-control"
+              name="dateFinTravaux"
+              formControlName="dateFinTravaux"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div
+            *ngIf="
+              editForm.get('dateFinTravaux')!.invalid && (editForm.get('dateFinTravaux')!.dirty || editForm.get('dateFinTravaux')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('dateFinTravaux')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('dateFinTravaux')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.rue" for="field_rue">Rue</label>
+          <input type="text" class="form-control" name="rue" id="field_rue" data-cy="rue" formControlName="rue" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.porte" for="field_porte">Porte</label>
+          <input type="text" class="form-control" name="porte" id="field_porte" data-cy="porte" formControlName="porte" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.coutMenage" for="field_coutMenage"
+            >Cout Menage</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="coutMenage"
+            id="field_coutMenage"
+            data-cy="coutMenage"
+            formControlName="coutMenage"
+          />
+          <div *ngIf="editForm.get('coutMenage')!.invalid && (editForm.get('coutMenage')!.dirty || editForm.get('coutMenage')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('coutMenage')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.subvOnea" for="field_subvOnea"
+            >Subv Onea</label
+          >
+          <input type="number" class="form-control" name="subvOnea" id="field_subvOnea" data-cy="subvOnea" formControlName="subvOnea" />
+          <div *ngIf="editForm.get('subvOnea')!.invalid && (editForm.get('subvOnea')!.dirty || editForm.get('subvOnea')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('subvOnea')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('subvOnea')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.subvProjet" for="field_subvProjet"
+            >Subv Projet</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="subvProjet"
+            id="field_subvProjet"
+            data-cy="subvProjet"
+            formControlName="subvProjet"
+          />
+          <div *ngIf="editForm.get('subvProjet')!.invalid && (editForm.get('subvProjet')!.dirty || editForm.get('subvProjet')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('subvProjet')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('subvProjet')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.autreSubv" for="field_autreSubv"
+            >Autre Subv</label
+          >
+          <input type="number" class="form-control" name="autreSubv" id="field_autreSubv" data-cy="autreSubv" formControlName="autreSubv" />
+          <div *ngIf="editForm.get('autreSubv')!.invalid && (editForm.get('autreSubv')!.dirty || editForm.get('autreSubv')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('autreSubv')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('autreSubv')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.toles" for="field_toles">Toles</label>
+          <input type="number" class="form-control" name="toles" id="field_toles" data-cy="toles" formControlName="toles" />
+          <div *ngIf="editForm.get('toles')!.invalid && (editForm.get('toles')!.dirty || editForm.get('toles')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('toles')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('toles')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.animateur" for="field_animateur"
+            >Animateur</label
+          >
+          <input type="text" class="form-control" name="animateur" id="field_animateur" data-cy="animateur" formControlName="animateur" />
+          <div *ngIf="editForm.get('animateur')!.invalid && (editForm.get('animateur')!.dirty || editForm.get('animateur')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('animateur')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.superviseur" for="field_superviseur"
+            >Superviseur</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="superviseur"
+            id="field_superviseur"
+            data-cy="superviseur"
+            formControlName="superviseur"
+          />
+          <div *ngIf="editForm.get('superviseur')!.invalid && (editForm.get('superviseur')!.dirty || editForm.get('superviseur')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('superviseur')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.controleur" for="field_controleur"
+            >Controleur</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="controleur"
+            id="field_controleur"
+            data-cy="controleur"
+            formControlName="controleur"
+          />
+          <div *ngIf="editForm.get('controleur')!.invalid && (editForm.get('controleur')!.dirty || editForm.get('controleur')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('controleur')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.parcelle" for="field_parcelle"
+            >Parcelle</label
+          >
+          <select class="form-control" id="field_parcelle" data-cy="parcelle" name="parcelle" formControlName="parcelle">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="parcelleOption.id === editForm.get('parcelle')!.value?.id ? editForm.get('parcelle')!.value : parcelleOption"
+              *ngFor="let parcelleOption of parcellesSharedCollection; trackBy: trackParcelleById"
+            >
+              {{ parcelleOption.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.prevision" for="field_prevision"
+            >Prevision</label
+          >
+          <select class="form-control" id="field_prevision" data-cy="prevision" name="prevision" formControlName="prevision">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="previsionOption.id === editForm.get('prevision')!.value?.id ? editForm.get('prevision')!.value : previsionOption"
+              *ngFor="let previsionOption of previsionsSharedCollection; trackBy: trackPrevisionById"
+            >
+              {{ previsionOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.natureouvrage" for="field_natureouvrage"
+            >Natureouvrage</label
+          >
+          <select
+            class="form-control"
+            id="field_natureouvrage"
+            data-cy="natureouvrage"
+            name="natureouvrage"
+            formControlName="natureouvrage"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                natureOuvrageOption.id === editForm.get('natureouvrage')!.value?.id
+                  ? editForm.get('natureouvrage')!.value
+                  : natureOuvrageOption
+              "
+              *ngFor="let natureOuvrageOption of natureOuvragesSharedCollection; trackBy: trackNatureOuvrageById"
+            >
+              {{ natureOuvrageOption.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.typehabitation"
+            for="field_typehabitation"
+            >Typehabitation</label
+          >
+          <select
+            class="form-control"
+            id="field_typehabitation"
+            data-cy="typehabitation"
+            name="typehabitation"
+            formControlName="typehabitation"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                typeHabitationOption.id === editForm.get('typehabitation')!.value?.id
+                  ? editForm.get('typehabitation')!.value
+                  : typeHabitationOption
+              "
+              *ngFor="let typeHabitationOption of typeHabitationsSharedCollection; trackBy: trackTypeHabitationById"
+            >
+              {{ typeHabitationOption.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.sourceapprovep"
+            for="field_sourceapprovep"
+            >Sourceapprovep</label
+          >
+          <select
+            class="form-control"
+            id="field_sourceapprovep"
+            data-cy="sourceapprovep"
+            name="sourceapprovep"
+            formControlName="sourceapprovep"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                sourceApprovEpOption.id === editForm.get('sourceapprovep')!.value?.id
+                  ? editForm.get('sourceapprovep')!.value
+                  : sourceApprovEpOption
+              "
+              *ngFor="let sourceApprovEpOption of sourceApprovEpsSharedCollection; trackBy: trackSourceApprovEpById"
+            >
+              {{ sourceApprovEpOption.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.modeevacuationeauusee"
+            for="field_modeevacuationeauusee"
+            >Modeevacuationeauusee</label
+          >
+          <select
+            class="form-control"
+            id="field_modeevacuationeauusee"
+            data-cy="modeevacuationeauusee"
+            name="modeevacuationeauusee"
+            formControlName="modeevacuationeauusee"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                modeEvacuationEauUseeOption.id === editForm.get('modeevacuationeauusee')!.value?.id
+                  ? editForm.get('modeevacuationeauusee')!.value
+                  : modeEvacuationEauUseeOption
+              "
+              *ngFor="let modeEvacuationEauUseeOption of modeEvacuationEauUseesSharedCollection; trackBy: trackModeEvacuationEauUseeById"
+            >
+              {{ modeEvacuationEauUseeOption.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.modeevacexcreta"
+            for="field_modeevacexcreta"
+            >Modeevacexcreta</label
+          >
+          <select
+            class="form-control"
+            id="field_modeevacexcreta"
+            data-cy="modeevacexcreta"
+            name="modeevacexcreta"
+            formControlName="modeevacexcreta"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                modeEvacExcretaOption.id === editForm.get('modeevacexcreta')!.value?.id
+                  ? editForm.get('modeevacexcreta')!.value
+                  : modeEvacExcretaOption
+              "
+              *ngFor="let modeEvacExcretaOption of modeEvacExcretasSharedCollection; trackBy: trackModeEvacExcretaById"
+            >
+              {{ modeEvacExcretaOption.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.macon" for="field_macon">Macon</label>
+          <select class="form-control" id="field_macon" data-cy="macon" name="macon" formControlName="macon">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="maconOption.id === editForm.get('macon')!.value?.id ? editForm.get('macon')!.value : maconOption"
+              *ngFor="let maconOption of maconsSharedCollection; trackBy: trackMaconById"
+            >
+              {{ maconOption.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauFicheSuiviOuvrage.prefabricant" for="field_prefabricant"
+            >Prefabricant</label
+          >
+          <select class="form-control" id="field_prefabricant" data-cy="prefabricant" name="prefabricant" formControlName="prefabricant">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                prefabricantOption.id === editForm.get('prefabricant')!.value?.id ? editForm.get('prefabricant')!.value : prefabricantOption
+              "
+              *ngFor="let prefabricantOption of prefabricantsSharedCollection; trackBy: trackPrefabricantById"
+            >
+              {{ prefabricantOption.libelle }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

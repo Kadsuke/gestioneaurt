@@ -1,0 +1,30 @@
+{
+  "passerelleApp": {
+    "gestioneauSecteur": {
+      "home": {
+        "title": "Secteurs",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Secteur",
+        "createOrEditLabel": "Créer ou éditer un Secteur",
+        "search": "Recherche pour Secteur",
+        "notFound": "Aucun Secteur trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Secteur {{ id }} ?"
+      },
+      "detail": {
+        "title": "Secteur"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "localite": "Localite"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauSecteur": {
+      "created": "Un nouveau Secteur a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Secteur avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Secteur avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

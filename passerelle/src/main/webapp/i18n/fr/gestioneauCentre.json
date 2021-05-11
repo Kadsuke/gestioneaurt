@@ -1,0 +1,33 @@
+{
+  "passerelleApp": {
+    "gestioneauCentre": {
+      "home": {
+        "title": "Centres",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Centre",
+        "createOrEditLabel": "Créer ou éditer un Centre",
+        "search": "Recherche pour Centre",
+        "notFound": "Aucun Centre trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Centre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Centre"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "responsable": "Responsable",
+      "contact": "Contact",
+      "centreregroupement": "Centreregroupement",
+      "prevision": "Prevision"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauCentre": {
+      "created": "Un nouveau Centre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Centre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Centre avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

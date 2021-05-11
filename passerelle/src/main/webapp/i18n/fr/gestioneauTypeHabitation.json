@@ -1,0 +1,29 @@
+{
+  "passerelleApp": {
+    "gestioneauTypeHabitation": {
+      "home": {
+        "title": "TypeHabitations",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Type Habitation",
+        "createOrEditLabel": "Créer ou éditer un Type Habitation",
+        "search": "Recherche pour Type Habitation",
+        "notFound": "Aucun Type Habitation trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Type Habitation {{ id }} ?"
+      },
+      "detail": {
+        "title": "Type Habitation"
+      },
+      "id": "ID",
+      "libelle": "Libelle"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauTypeHabitation": {
+      "created": "Un nouveau Type Habitation a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Type Habitation avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Type Habitation avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

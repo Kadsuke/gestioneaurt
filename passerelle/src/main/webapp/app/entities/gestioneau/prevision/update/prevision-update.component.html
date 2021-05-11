@@ -1,0 +1,161 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-prevision-heading"
+        data-cy="PrevisionCreateUpdateHeading"
+        jhiTranslate="passerelleApp.gestioneauPrevision.home.createOrEditLabel"
+      >
+        Create or edit a Prevision
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauPrevision.nbLatrine" for="field_nbLatrine"
+            >Nb Latrine</label
+          >
+          <input type="number" class="form-control" name="nbLatrine" id="field_nbLatrine" data-cy="nbLatrine" formControlName="nbLatrine" />
+          <div *ngIf="editForm.get('nbLatrine')!.invalid && (editForm.get('nbLatrine')!.dirty || editForm.get('nbLatrine')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nbLatrine')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('nbLatrine')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauPrevision.nbPuisard" for="field_nbPuisard"
+            >Nb Puisard</label
+          >
+          <input type="number" class="form-control" name="nbPuisard" id="field_nbPuisard" data-cy="nbPuisard" formControlName="nbPuisard" />
+          <div *ngIf="editForm.get('nbPuisard')!.invalid && (editForm.get('nbPuisard')!.dirty || editForm.get('nbPuisard')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nbPuisard')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('nbPuisard')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauPrevision.nbPublic" for="field_nbPublic">Nb Public</label>
+          <input type="number" class="form-control" name="nbPublic" id="field_nbPublic" data-cy="nbPublic" formControlName="nbPublic" />
+          <div *ngIf="editForm.get('nbPublic')!.invalid && (editForm.get('nbPublic')!.dirty || editForm.get('nbPublic')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nbPublic')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('nbPublic')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauPrevision.nbScolaire" for="field_nbScolaire"
+            >Nb Scolaire</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="nbScolaire"
+            id="field_nbScolaire"
+            data-cy="nbScolaire"
+            formControlName="nbScolaire"
+          />
+          <div *ngIf="editForm.get('nbScolaire')!.invalid && (editForm.get('nbScolaire')!.dirty || editForm.get('nbScolaire')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nbScolaire')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('nbScolaire')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauPrevision.centre" for="field_centre">Centre</label>
+          <select class="form-control" id="field_centre" data-cy="centre" name="centre" formControlName="centre">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="centreOption.id === editForm.get('centre')!.value?.id ? editForm.get('centre')!.value : centreOption"
+              *ngFor="let centreOption of centresCollection; trackBy: trackCentreById"
+            >
+              {{ centreOption.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="passerelleApp.gestioneauPrevision.refannee" for="field_refannee">Refannee</label>
+          <select class="form-control" id="field_refannee" data-cy="refannee" name="refannee" formControlName="refannee">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="anneeOption.id === editForm.get('refannee')!.value?.id ? editForm.get('refannee')!.value : anneeOption"
+              *ngFor="let anneeOption of refanneesCollection; trackBy: trackAnneeById"
+            >
+              {{ anneeOption.libelle }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
