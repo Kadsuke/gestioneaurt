@@ -1,0 +1,29 @@
+{
+  "passerelleApp": {
+    "gestioneauModeEvacuationEauUsee": {
+      "home": {
+        "title": "ModeEvacuationEauUsees",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Mode Evacuation Eau Usee",
+        "createOrEditLabel": "Créer ou éditer un Mode Evacuation Eau Usee",
+        "search": "Recherche pour Mode Evacuation Eau Usee",
+        "notFound": "Aucun Mode Evacuation Eau Usee trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Mode Evacuation Eau Usee {{ id }} ?"
+      },
+      "detail": {
+        "title": "Mode Evacuation Eau Usee"
+      },
+      "id": "ID",
+      "libelle": "Libelle"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauModeEvacuationEauUsee": {
+      "created": "Un nouveau Mode Evacuation Eau Usee a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Mode Evacuation Eau Usee avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Mode Evacuation Eau Usee avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

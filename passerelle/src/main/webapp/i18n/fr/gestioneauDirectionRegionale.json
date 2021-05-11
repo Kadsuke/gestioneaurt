@@ -1,0 +1,31 @@
+{
+  "passerelleApp": {
+    "gestioneauDirectionRegionale": {
+      "home": {
+        "title": "DirectionRegionales",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Direction Regionale",
+        "createOrEditLabel": "Créer ou éditer un Direction Regionale",
+        "search": "Recherche pour Direction Regionale",
+        "notFound": "Aucun Direction Regionale trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Direction Regionale {{ id }} ?"
+      },
+      "detail": {
+        "title": "Direction Regionale"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "responsable": "Responsable",
+      "contact": "Contact"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauDirectionRegionale": {
+      "created": "Un nouveau Direction Regionale a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Direction Regionale avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Direction Regionale avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

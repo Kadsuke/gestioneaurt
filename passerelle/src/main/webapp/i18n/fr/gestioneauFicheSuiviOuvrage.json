@@ -1,0 +1,58 @@
+{
+  "passerelleApp": {
+    "gestioneauFicheSuiviOuvrage": {
+      "home": {
+        "title": "FicheSuiviOuvrages",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Fiche Suivi Ouvrage",
+        "createOrEditLabel": "Créer ou éditer un Fiche Suivi Ouvrage",
+        "search": "Recherche pour Fiche Suivi Ouvrage",
+        "notFound": "Aucun Fiche Suivi Ouvrage trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Fiche Suivi Ouvrage {{ id }} ?"
+      },
+      "detail": {
+        "title": "Fiche Suivi Ouvrage"
+      },
+      "id": "ID",
+      "prjAppuis": "Prj Appuis",
+      "nomBenef": "Nom Benef",
+      "prenomBenef": "Prenom Benef",
+      "professionBenef": "Profession Benef",
+      "nbUsagers": "Nb Usagers",
+      "contacts": "Contacts",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "dateRemiseDevis": "Date Remise Devis",
+      "dateDebutTravaux": "Date Debut Travaux",
+      "dateFinTravaux": "Date Fin Travaux",
+      "rue": "Rue",
+      "porte": "Porte",
+      "coutMenage": "Cout Menage",
+      "subvOnea": "Subv Onea",
+      "subvProjet": "Subv Projet",
+      "autreSubv": "Autre Subv",
+      "toles": "Toles",
+      "animateur": "Animateur",
+      "superviseur": "Superviseur",
+      "controleur": "Controleur",
+      "parcelle": "Parcelle",
+      "prevision": "Prevision",
+      "natureouvrage": "Natureouvrage",
+      "typehabitation": "Typehabitation",
+      "sourceapprovep": "Sourceapprovep",
+      "modeevacuationeauusee": "Modeevacuationeauusee",
+      "modeevacexcreta": "Modeevacexcreta",
+      "macon": "Macon",
+      "prefabricant": "Prefabricant"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauFicheSuiviOuvrage": {
+      "created": "Un nouveau Fiche Suivi Ouvrage a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Fiche Suivi Ouvrage avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Fiche Suivi Ouvrage avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

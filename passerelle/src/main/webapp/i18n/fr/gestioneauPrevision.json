@@ -1,0 +1,34 @@
+{
+  "passerelleApp": {
+    "gestioneauPrevision": {
+      "home": {
+        "title": "Previsions",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Prevision",
+        "createOrEditLabel": "Créer ou éditer un Prevision",
+        "search": "Recherche pour Prevision",
+        "notFound": "Aucun Prevision trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Prevision {{ id }} ?"
+      },
+      "detail": {
+        "title": "Prevision"
+      },
+      "id": "ID",
+      "nbLatrine": "Nb Latrine",
+      "nbPuisard": "Nb Puisard",
+      "nbPublic": "Nb Public",
+      "nbScolaire": "Nb Scolaire",
+      "centre": "Centre",
+      "refannee": "Refannee"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauPrevision": {
+      "created": "Un nouveau Prevision a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Prevision avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Prevision avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

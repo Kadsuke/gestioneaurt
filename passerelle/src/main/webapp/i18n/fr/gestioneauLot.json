@@ -1,0 +1,30 @@
+{
+  "passerelleApp": {
+    "gestioneauLot": {
+      "home": {
+        "title": "Lots",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Lot",
+        "createOrEditLabel": "Créer ou éditer un Lot",
+        "search": "Recherche pour Lot",
+        "notFound": "Aucun Lot trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Lot {{ id }} ?"
+      },
+      "detail": {
+        "title": "Lot"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "section": "Section"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauLot": {
+      "created": "Un nouveau Lot a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Lot avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Lot avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

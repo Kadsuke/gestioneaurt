@@ -1,0 +1,14 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "docker-compose",
+    "gatewayType": "SpringCloudGateway",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": ["passerelle", "gestioneau"],
+    "clusteredDbApps": [],
+    "serviceDiscoveryType": "eureka",
+    "dockerRepositoryName": "seijuro",
+    "dockerPushCommand": "docker push",
+    "jwtSecretKey": "NDcxYzI4NjVkOTRlZmUzMzExMmM5NjQ0M2ZmOTc0MTgzNDE0NTEzOTBjZjRkMTYxMjQwYzBhM2IxNTNiM2NjMjVmZjIxMDIwNGI3N2E4MWNmZjcxNjUwZTBjNjA2OTdjODg0Mw=="
+  }
+}

@@ -1,0 +1,36 @@
+package com.onea.sidot.gestioneau.repository.search;
+
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
+import com.onea.sidot.gestioneau.domain.Macon;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.ReactiveElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.SearchHit;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
+import org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository;
+import reactor.core.publisher.Flux;
+
+/**
+ * Spring Data Elasticsearch repository for the {@link Macon} entity.
+ */
+public interface MaconSearchRepository extends ReactiveElasticsearchRepository<Macon, Long>, MaconSearchRepositoryInternal {}
+
+interface MaconSearchRepositoryInternal {
+    Flux<Macon> search(String query, Pageable pageable);
+}
+
+class MaconSearchRepositoryInternalImpl implements MaconSearchRepositoryInternal {
+
+    private final ReactiveElasticsearchTemplate reactiveElasticsearchTemplate;
+
+    MaconSearchRepositoryInternalImpl(ReactiveElasticsearchTemplate reactiveElasticsearchTemplate) {
+        this.reactiveElasticsearchTemplate = reactiveElasticsearchTemplate;
+    }
+
+    @Override
+    public Flux<Macon> search(String query, Pageable pageable) {
+        NativeSearchQuery nativeSearchQuery = new NativeSearchQuery(queryStringQuery(query));
+        nativeSearchQuery.setPageable(pageable);
+        return reactiveElasticsearchTemplate.search(nativeSearchQuery, Macon.class).map(SearchHit::getContent);
+    }
+}

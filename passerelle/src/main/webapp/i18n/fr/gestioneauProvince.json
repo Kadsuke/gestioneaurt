@@ -1,0 +1,30 @@
+{
+  "passerelleApp": {
+    "gestioneauProvince": {
+      "home": {
+        "title": "Provinces",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Province",
+        "createOrEditLabel": "Créer ou éditer un Province",
+        "search": "Recherche pour Province",
+        "notFound": "Aucun Province trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Province {{ id }} ?"
+      },
+      "detail": {
+        "title": "Province"
+      },
+      "id": "ID",
+      "libelle": "Libelle",
+      "region": "Region"
+    }
+  },
+  "gestioneauApp": {
+    "gestioneauProvince": {
+      "created": "Un nouveau Province a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Province avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Province avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

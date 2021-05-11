@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="commune">
+      <h2 data-cy="communeDetailsHeading"><span jhiTranslate="passerelleApp.gestioneauCommune.detail.title">Commune</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ commune.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauCommune.libelle">Libelle</span></dt>
+        <dd>
+          <span>{{ commune.libelle }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauCommune.province">Province</span></dt>
+        <dd>
+          <div *ngIf="commune.province">
+            <a [routerLink]="['/province', commune.province?.id, 'view']">{{ commune.province?.libelle }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauCommune.typecommune">Typecommune</span></dt>
+        <dd>
+          <div *ngIf="commune.typecommune">
+            <a [routerLink]="['/type-commune', commune.typecommune?.id, 'view']">{{ commune.typecommune?.libelle }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/commune', commune.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

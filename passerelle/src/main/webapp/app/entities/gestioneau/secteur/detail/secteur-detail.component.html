@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="secteur">
+      <h2 data-cy="secteurDetailsHeading"><span jhiTranslate="passerelleApp.gestioneauSecteur.detail.title">Secteur</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ secteur.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauSecteur.libelle">Libelle</span></dt>
+        <dd>
+          <span>{{ secteur.libelle }}</span>
+        </dd>
+        <dt><span jhiTranslate="passerelleApp.gestioneauSecteur.localite">Localite</span></dt>
+        <dd>
+          <div *ngIf="secteur.localite">
+            <a [routerLink]="['/localite', secteur.localite?.id, 'view']">{{ secteur.localite?.libelle }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/secteur', secteur.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
